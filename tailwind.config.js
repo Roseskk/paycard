@@ -6,10 +6,10 @@ module.exports = {
     extend: {
 
       height: {
-        'form': '350px'
+        'card': '192px'
       },
       width: {
-        'form': '400px'
+        'card': '336px'
       },
       maxWidth: {
         '1600': '1600px',
@@ -19,6 +19,9 @@ module.exports = {
       },
       backgroundImage: {
         'form': "url('./images/bg/stars.png')"
+      },
+      letterSpacing: {
+        wideXl: '0.35em'
       },
       boxShadow: {
         'form': '0 0 10px rgba(1,1,122,1)',
