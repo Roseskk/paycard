@@ -44,11 +44,16 @@ module.exports = {
           '0%,100%': { background: 'green' },
           '50%' : {background: 'red'}
         },
+        toplvl: {
+          '0%,100%': {transform: 'translate(0,0)'},
+          '50%': {transform: 'translate(0,-50px)'}
+        }
 
       },
       animation: {
         slideRed: 'slideRed 1s ease-in-out paused',
-        slideGreen: 'slideGreen 1s ease-in-out paused'
+        slideGreen: 'slideGreen 1s ease-in-out paused',
+        toplvl: 'toplvl 1s ease-in-out 1'
       },
     },
   },
