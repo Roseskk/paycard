@@ -1,17 +1,21 @@
 import {createSlice} from "@reduxjs/toolkit";
+import Utility from "../../service/Utility";
 
 export const inputSlice = createSlice({
     name: 'inputHandler',
     initialState: {
-        value: ''
+        name: '',
+        color:''
     },
     reducers: {
-        firstInputHandler:(state,action) => {
-            console.log('payload',action)
-        }
+        firstLetterHandler:(state,{payload}) => {
+            const number = payload.firstNumber
+            const nameHandler = new Utility()
+            nameHandler.NameHandler({state,number})
+        },
     }
 })
 
-export const {firstInputHandler} = inputSlice.actions
+export const {firstLetterHandler} = inputSlice.actions
 
 export default inputSlice.reducer

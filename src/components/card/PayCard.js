@@ -1,13 +1,13 @@
-import {useEffect, useRef, useState} from "react";
+import {useRef, useState} from "react";
 import {useSelector,useDispatch} from "react-redux";
-import {animate,hide} from "../../redux/slice/transitionSlice";
-import {firstInputHandler} from "../../redux/slice/inputSlice";
+import {animate} from "../../redux/slice/transitionSlice";
+import {firstLetterHandler} from "../../redux/slice/inputSlice";
 
 
 export default function PayCard() {
 
-    const [color,SetColor] = useState('bg-clip-text text-transparent  bg-gradient-to-r from-black to-white')
-    const [cardName,SetCardName] = useState('Unknown');
+    // const [color,SetColor] = useState('bg-clip-text text-transparent  bg-gradient-to-r from-black to-white')
+    // const [cardName,SetCardName] = useState('Unknown');
 
     /** tests
 
@@ -24,41 +24,44 @@ export default function PayCard() {
     const fourthInput = useRef()
 
     const placeHolder = useSelector((state) => state.placeHolder.value);
-    const inputHandler = useSelector((state) => state.inputHolder.value);
+    const inputHandler = useSelector((state) => state.inputHolder.name);
+    const colorHandler = useSelector((state) => state.inputHolder.color);
+
     const dispatch = useDispatch();
 
 
     const  handleFirstInput=(e)=>{
         const firstNumber =  e.target.value[0]
-        dispatch(firstInputHandler({firstNumber}))
+        dispatch(firstLetterHandler({firstNumber}))
+
         SetFirstState(e.target.value.slice(0,4));
         if(e.target.value.length === 4) {
             secondInput.current.focus();
         }
 
-        switch (firstNumber) {
-            case '4':{
-                setTimeout(()=>{
-                    SetCardName('VISA')
-                },500)
-                SetColor('bg-clip-text text-transparent  bg-gradient-to-r from-blue-500 to-white animate-toplvl')
-                return
-            }
-            case '5':{
-                setTimeout(()=>{
-                    SetCardName('MASTERCARD')
-                },500)
-                SetColor('bg-clip-text text-transparent  bg-gradient-to-r from-red-500 to-orange-500 animate-toplvl')
-                return;
-            }
-            default: {
-                setTimeout(()=>{
-                    SetCardName('Unknown')
-                },500)
-                SetColor('bg-clip-text text-transparent  bg-gradient-to-r from-black to-white  ')
-                return;
-            }
-        }
+        // switch (firstNumber) {
+        //     case '4':{
+        //         setTimeout(()=>{
+        //             SetCardName('VISA')
+        //         },500)
+        //         SetColor('bg-clip-text text-transparent  bg-gradient-to-r from-blue-500 to-white animate-toplvl')
+        //         return
+        //     }
+        //     case '5':{
+        //         setTimeout(()=>{
+        //             SetCardName('MASTERCARD')
+        //         },500)
+        //         SetColor('bg-clip-text text-transparent  bg-gradient-to-r from-red-500 to-orange-500 animate-toplvl')
+        //         return;
+        //     }
+        //     default: {
+        //         setTimeout(()=>{
+        //             SetCardName('Unknown')
+        //         },500)
+        //         SetColor('bg-clip-text text-transparent  bg-gradient-to-r from-black to-white  ')
+        //         return;
+        //     }
+        // }
     }
 
     const  handleSecondInput=(e)=>{
@@ -84,7 +87,7 @@ export default function PayCard() {
         <div className={'bg-black absolute w-card h-card  rounded overflow-hidden'}>
             <form className={'p-2'}>
                 <div className={'flex items-center justify-center'}>
-                    <h2 className={`pl-1 pr-1  text-center text-2xl font-montserratRegular ${color} transition ease-in-out delay-1000 border rounded w-full `}>{cardName}</h2>
+                    <h2 className={`pl-1 pr-1  text-center text-2xl font-montserratRegular ${colorHandler} transition ease-in-out delay-1000 border rounded w-full `}>{inputHandler === '' ? 'Unknown' : inputHandler}</h2>
                 </div>
                 <div className={'mt-5 flex gap-2 items-center justify-center'}>
                     <div className={'relative  rounded '}>
