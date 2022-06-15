@@ -12,7 +12,6 @@ export default function PayCard() {
     /** tests
 
      */
-    const [target,setTarget] = useState('')
 
     const [firstState,SetFirstState] = useState('')
     const [secondState,SetSecondState] = useState('')
@@ -31,8 +30,7 @@ export default function PayCard() {
 
     const  handleFirstInput=(e)=>{
         const firstNumber =  e.target.value[0]
-        setTarget(firstNumber)
-        dispatch(firstInputHandler({firstNumber,secondInput}))
+        dispatch(firstInputHandler({firstNumber}))
         SetFirstState(e.target.value.slice(0,4));
         if(e.target.value.length === 4) {
             secondInput.current.focus();
