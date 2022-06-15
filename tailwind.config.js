@@ -15,7 +15,7 @@ module.exports = {
         '1600': '1600px',
       },
       fontSize: {
-        xxs: '0.675rem'
+        xxs: '0.675rem !important'
       },
       backgroundImage: {
         'form': "url('./images/bg/stars.png')"
@@ -25,6 +25,9 @@ module.exports = {
       },
       boxShadow: {
         'form': '0 0 10px rgba(1,1,122,1)',
+      },
+      scale: {
+        '08': '0.5'
       },
       translate: {
         '30': '30rem',
