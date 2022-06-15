@@ -5,7 +5,11 @@ export const inputSlice = createSlice({
     name: 'inputHandler',
     initialState: {
         name: '',
-        color:''
+        color:'',
+        firstValue:'',
+        secondValue:'',
+        thirdValue:'',
+        fourthValue:''
     },
     reducers: {
         firstLetterHandler:(state,{payload}) => {
@@ -13,6 +17,7 @@ export const inputSlice = createSlice({
             const nameHandler = new Utility()
             nameHandler.NameHandler({state,number})
         },
+
     }
 })
 
