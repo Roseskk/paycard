@@ -7,7 +7,7 @@ export const colorSlice = createSlice({
         color: ''
     },
     reducers:{
-        colorHandler:(state,{payload}) => {
+        colorHandler:(state=0,{payload}) => {
             const number = payload.firstNumber;
             const colorHandler = new Utility()
             colorHandler.ColorHandler({state,number})

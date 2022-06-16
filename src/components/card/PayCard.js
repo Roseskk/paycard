@@ -1,62 +1,61 @@
 import {useRef, useState} from "react";
 import {useSelector,useDispatch} from "react-redux";
 import {animate} from "../../redux/slice/transitionSlice";
-import {firstLetterHandler} from "../../redux/slice/inputSlice";
+import {firstInput, firstLetterHandler, fourthInput, secondInput, thirdInput} from "../../redux/slice/inputSlice";
 import {colorHandler} from "../../redux/slice/colorSlice";
 
 
 export default function PayCard() {
 
+    const dispatch = useDispatch();
+
     const placeHolder = useSelector((state) => state.placeHolder.value);
     const inputHandler = useSelector((state) => state.inputHolder.name);
     const colorSelector = useSelector((state) => state.colorHolder.color);
+    const firstInputValue = useSelector((state) => state.inputHolder.firstValue)
+    const secondInputValue = useSelector((state) => state.inputHolder.secondValue)
+    const thirdInputValue = useSelector((state) => state.inputHolder.thirdValue)
+    const fourthInputValue = useSelector((state) => state.inputHolder.fourthValue)
     /** tests
 
      */
-
-    const [firstState,SetFirstState] = useState('')
-    const [secondState,SetSecondState] = useState('')
-    const [thirdState,SetThirdState] = useState('')
-    const [fourthState,SetFourthState] = useState('')
-
-    const firstInput = useRef();
-    const secondInput = useRef();
-    const thirdInput = useRef();
-    const fourthInput = useRef()
-
-
-    const dispatch = useDispatch();
-
+    const firstInputRef = useRef();
+    const secondInputRef = useRef();
+    const thirdInputRef = useRef();
+    const fourthInputRef = useRef()
 
     const  handleFirstInput=(e)=>{
         const firstNumber =  e.target.value[0]
-            dispatch(colorHandler({firstNumber}))
+        const value = e.target.value
+        dispatch(colorHandler({firstNumber}))
         setTimeout(()=>{
             dispatch(firstLetterHandler({firstNumber}))
         },500)
-
-        SetFirstState(e.target.value.slice(0,4));
+        dispatch(firstInput({value}))
         if(e.target.value.length === 4) {
-            secondInput.current.focus();
+            secondInputRef.current.focus();
         }
     }
 
     const  handleSecondInput=(e)=>{
-        SetSecondState(e.target.value.slice(0,4));
+        const value = e.target.value
+        dispatch(secondInput({value}))
         if(e.target.value.length === 4) {
-            thirdInput.current.focus();
+            thirdInputRef.current.focus();
         }
     }
 
     const  handleThirdInput=(e)=>{
-        SetThirdState(e.target.value.slice(0,4));
+        const value = e.target.value
+        dispatch(thirdInput({value}))
         if(e.target.value.length === 4) {
-            fourthInput.current.focus();
+            fourthInputRef.current.focus();
         }
     }
 
     const  handleFourthInput=(e)=>{
-        SetFourthState(e.target.value.slice(0,4));
+        const value = e.target.value
+        dispatch(fourthInput({value}))
     }
 
 
@@ -68,25 +67,33 @@ export default function PayCard() {
                 </div>
                 <div className={'mt-5 flex gap-2 items-center justify-center'}>
                     <div className={'relative  rounded '}>
-                        <input onClick={()=>dispatch(animate())}  onChange={handleFirstInput} ref={firstInput} tabIndex={1} value={firstState}   className={'focus:outline-none focus:ring-0 w-12 mt-1 font-montserratRegular   bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'} type={"number"} />
+                        <input onClick={()=>dispatch(animate())}  onChange={handleFirstInput} ref={firstInputRef} tabIndex={1} value={firstInputValue}   className={'focus:outline-none focus:ring-0 w-12 mt-1 font-montserratRegular   bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'} type={"number"} required />
                         <span className={`text-white pointer-events-none absolute left-1 font-montserratRegular transition ease-in-out delay-200  ${placeHolder}`}>1234</span>
                     </div>
                     <div className={'relative  rounded '}>
-                        <input onChange={handleSecondInput} ref={secondInput}  tabIndex={2} value={secondState} className={'focus:outline-none focus:ring-0 w-12 font-montserratRegular  mt-1  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'}  type={"number"} />
+                        <input onChange={handleSecondInput} ref={secondInputRef}  tabIndex={2} value={secondInputValue} className={'focus:outline-none focus:ring-0 w-12 font-montserratRegular  mt-1  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'}  type={"number"} required />
                         <span className={`text-white pointer-events-none absolute left-1 font-montserratRegular transition ease-in-out delay-200  ${placeHolder}`}>1234</span>
                     </div>
                     <div className={'relative  rounded '}>
-                        <input onChange={handleThirdInput} ref={thirdInput} tabIndex={3} value={thirdState} className={'focus:outline-none focus:ring-0 w-12 font-montserratRegular mt-1  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'}  type={"number"} />
+                        <input onChange={handleThirdInput} ref={thirdInputRef} tabIndex={3} value={thirdInputValue} className={'focus:outline-none focus:ring-0 w-12 font-montserratRegular mt-1  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'}  type={"number"} required />
                         <span className={`text-white pointer-events-none absolute left-1 font-montserratRegular transition ease-in-out delay-200  ${placeHolder}`}>1234</span>
                     </div>
                     <div className={'relative  rounded '}>
-                        <input onChange={handleFourthInput} ref={fourthInput} tabIndex={4} value={fourthState} className={'focus:outline-none focus:ring-0 w-12 font-montserratRegular mt-1  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'}  type={"number"} />
+                        <input onChange={handleFourthInput} ref={fourthInputRef} tabIndex={4} value={fourthInputValue} className={'focus:outline-none focus:ring-0 w-12 font-montserratRegular mt-1  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'}  type={"number"} required />
                         <span className={`text-white pointer-events-none absolute left-1 font-montserratRegular transition ease-in-out delay-200  ${placeHolder}`}>1234</span>
                     </div>
                 </div>
-                <div className={'absolute flex gap-2 bottom-10 left-14 '}>
-                    <input  className={'focus:outline-none focus:ring-0 w-8 font-montserratRegular text-center  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'} placeholder={'02'} type={"number"} />
-                    <input  className={'focus:outline-none focus:ring-0 w-8 font-montserratRegular text-center  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'} placeholder={'24'} type={"number"} />
+                <div className={'absolute flex gap-2 bottom-10 left-14'}>
+                    <div className={'relative w-8 rounded '}>
+                        <input  className={'focus:outline-none focus:ring-0 w-8 font-montserratRegular mt-1  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'}  type={"number"} required />
+                        <span className={`text-white pointer-events-none absolute left-0 font-montserratRegular transition ease-in-out delay-200 `}>MM</span>
+                    </div>
+                    <div className={'relative w-8 rounded '}>
+                        <input  className={'focus:outline-none focus:ring-0 w-8 font-montserratRegular mt-1  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'}  type={"number"} required />
+                        <span className={`text-white pointer-events-none absolute left-1 font-montserratRegular transition ease-in-out delay-200 `}>YY</span>
+                    </div>
+                    {/*<input  className={'focus:outline-none focus:ring-0 w-8 font-montserratRegular text-center  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'} placeholder={'MM'} type={"number"} />*/}
+                    {/*<input  className={'focus:outline-none focus:ring-0 w-8 font-montserratRegular text-center  bg-transparent border-b-white border-b tracking-widest placeholder-white text-white'} placeholder={'YY'} type={"number"} />*/}
                 </div>
             </form>
         </div>

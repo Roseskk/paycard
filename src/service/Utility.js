@@ -33,4 +33,25 @@ export default  class Utility {
             }
         }
     }
+    InputValidator({mutate,newState,type}) {
+        switch (type){
+            case 'first': {
+                return mutate.firstValue = newState.slice(0,4)
+
+            }
+            case 'second': {
+                return mutate.secondValue = newState.slice(0,4)
+            }
+            case 'third': {
+                return mutate.thirdValue = newState.slice(0,4)
+
+            }
+            case 'fourth': {
+                return mutate.fourthValue = newState.slice(0,4)
+            }
+            default: {
+                return;
+            }
+        }
+    }
 }

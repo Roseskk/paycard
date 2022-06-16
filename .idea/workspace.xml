@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5640ca3-7a50-49b1-8b51-7b7f1d02cb61" name="Changes" comment="redux">
+    <list default="true" id="a5640ca3-7a50-49b1-8b51-7b7f1d02cb61" name="Changes" comment="inputValidation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/card/PayCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/PayCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slice/colorSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slice/colorSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slice/inputSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slice/inputSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/Utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Utility.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654946433730</updated>
-      <workItem from="1654946435158" duration="42237000" />
+      <workItem from="1654946435158" duration="50004000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1654947339549</created>
@@ -124,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655302185288</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="inputValidation">
+      <created>1655308222860</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655308222860</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +152,7 @@
     <MESSAGE value="paycard" />
     <MESSAGE value="controlled inputs / text gradient" />
     <MESSAGE value="redux" />
-    <option name="LAST_COMMIT_MESSAGE" value="redux" />
+    <MESSAGE value="inputValidation" />
+    <option name="LAST_COMMIT_MESSAGE" value="inputValidation" />
   </component>
 </project>
