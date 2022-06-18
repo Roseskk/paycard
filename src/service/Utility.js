@@ -12,7 +12,7 @@ export default  class Utility {
                 break
             }
             default: {
-                state.name ='UNKNOWN';
+                state.name =' ';
                 break
             }
         }
