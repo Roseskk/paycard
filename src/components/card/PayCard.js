@@ -1,6 +1,7 @@
 import {useSelector} from "react-redux";
 import CardNumber from "./cardDigits/CardNumber";
 import CardDate from "./cardDigits/CardDate";
+import CardSecret from "./cardDigits/CardSecret";
 
 
 export default function PayCard() {
@@ -17,7 +18,10 @@ export default function PayCard() {
                     <h2 className={`pl-1 pr-1  text-center text-2xl font-montserratRegular ${colorSelector} z-50 transition ease-in-out delay-1000 border rounded w-full `}>{inputHandler === ' ' || inputHandler === '' ? 'Card' : inputHandler}</h2>
                 </div>
                 <CardNumber />
-                <CardDate />
+                <div className={'flex'}>
+                    <CardDate />
+                    <CardSecret />
+                </div>
             </form>
         </div>
     )

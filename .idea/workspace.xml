@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5640ca3-7a50-49b1-8b51-7b7f1d02cb61" name="Changes" comment="bg-animate visa mastercard">
+      <change afterPath="$PROJECT_DIR$/src/components/card/cardDigits/CardSecret.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/card/PayCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/PayCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/Utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Utility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654946433730</updated>
       <workItem from="1654946435158" duration="58308000" />
-      <workItem from="1655537705404" duration="10976000" />
+      <workItem from="1655537705404" duration="11592000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1654947339549</created>
@@ -150,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655551602734</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="bg-animate visa mastercard">
+      <created>1655552499780</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1655552499780</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

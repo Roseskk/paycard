@@ -15,7 +15,8 @@ module.exports = {
         '1600': '1600px',
       },
       fontSize: {
-        xxs: '0.675rem !important'
+        xxs: '0.675rem !important',
+        x3s: '0.5rem !important'
       },
       backgroundImage: {
         'form': "url('./images/bg/stars.png')"
