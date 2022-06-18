@@ -20,15 +20,35 @@ export default  class Utility {
     ColorHandler({state,number}){
         switch (number) {
             case '4':{
-                state.color = 'bg-clip-text text-transparent  bg-gradient-to-r from-blue-500 to-white animate-toplvl';
+                state.color = 'text-blue-400 animate-toplvl';
                 break
             }
             case '5':{
-                state.color = 'bg-clip-text text-transparent  bg-gradient-to-r from-red-500 to-orange-500 animate-toplvl';
+                state.color = 'text-red-400 animate-toplvl';
                 break
             }
             default: {
-                state.color = 'bg-clip-text text-transparent  bg-gradient-to-r from-black to-white';
+                state.color = 'text-black';
+                break
+            }
+        }
+    }
+    ColorBackground({state,number}) {
+        switch (number) {
+            case ' ': {
+                state.background = 'bg-black';
+                break
+            }
+            case '4': {
+                state.background = 'animate-visa';
+                break
+            }
+            case '5': {
+                state.background = 'animate-mastercard';
+                break
+            }
+            default: {
+                state.background = 'bg-black';
                 break
             }
         }
@@ -55,10 +75,10 @@ export default  class Utility {
     DateValidator({mutate,newState,type}) {
         switch (type){
             case 'month': {
-                return mutate.monthValue = newState.slice(0,2)
+                return mutate.monthValue = newState.replace(/[^0-9]/g, '').slice(0,2)
             }
             case 'year': {
-                return mutate.yearValue = newState.slice(0,2)
+                return mutate.yearValue = newState.replace(/[^0-9]/g, '').slice(0,2)
             }
             default: {
                 break

@@ -1,7 +1,7 @@
-import {animate} from "../../../redux/slice/transitionSlice";
+import {animate,show} from "../../../redux/slice/transitionSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {useRef} from 'react'
-import {colorHandler} from "../../../redux/slice/colorSlice";
+import {backgroundHandler, colorHandler} from "../../../redux/slice/colorSlice";
 import {firstInput, firstLetterHandler, fourthInput, secondInput, thirdInput} from "../../../redux/slice/inputSlice";
 
 
@@ -14,6 +14,7 @@ export default function CardNumber() {
     const secondInputValue = useSelector((state) => state.inputHolder.secondValue)
     const thirdInputValue = useSelector((state) => state.inputHolder.thirdValue)
     const fourthInputValue = useSelector((state) => state.inputHolder.fourthValue)
+    const bgSelector = useSelector((state)=> state.colorHolder.background)
 
     const firstInputRef = useRef();
     const secondInputRef = useRef();
@@ -26,15 +27,22 @@ export default function CardNumber() {
 
         switch (type){
             case 'first': {
-                const firstNumber = event.target.value[0]
-                const value = event.target.value
+                const firstNumber = event.target.value[0];
+                const value = event.target.value;
+
                 dispatch(colorHandler({firstNumber}))
+                dispatch(backgroundHandler({firstNumber}))
                 setTimeout(()=>{
                     dispatch(firstLetterHandler({firstNumber}))
                 },500)
                 dispatch(firstInput({value}))
                 if(value.length === 4) {
                     secondInputRef.current.focus();
+                }
+                if(value.length === 0) {
+                    dispatch(show())
+                } else {
+                    dispatch(animate())
                 }
                 break
             }
