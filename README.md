@@ -1,5 +1,6 @@
 VISA/MASTERCARD ONLINE Form.
 Form created with: React,tailwind.css,React-redux
+Fonts : Montserrat - regular,thin,light
 
 Card has animation when you start text in the very first input '4' or '5'.
 
