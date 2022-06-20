@@ -24,17 +24,19 @@ export default function PayCard() {
     //     yearValue: '',
     //     secretValue: '',
 
-    const handleCard = (e) => {
+    const handleCard = () => {
         // e.preventDefault()
         console.log('123')
-        dispatch(formSubmit())
     }
 
     useEffect(()=>{
         setInterval(()=>{
-            // if(formSelector === 'done') {
-            //     handleCard()
-            // }
+            dispatch(formSubmit())
+            console.log(formSelector)
+            if (formSelector === 'done') {
+                handleCard()
+                console.log('done')
+            }
         },1200)
     },[])
 

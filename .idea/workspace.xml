@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5640ca3-7a50-49b1-8b51-7b7f1d02cb61" name="Changes" comment="Form complete">
+    <list default="true" id="a5640ca3-7a50-49b1-8b51-7b7f1d02cb61" name="Changes" comment="Form submit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/card/PayCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/PayCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slice/inputSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slice/inputSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/Utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Utility.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654946433730</updated>
       <workItem from="1654946435158" duration="58308000" />
-      <workItem from="1655537705404" duration="19228000" />
+      <workItem from="1655537705404" duration="20680000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1654947339549</created>
@@ -172,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655713648161</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Form submit">
+      <created>1655717700379</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1655717700379</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +206,7 @@
     <MESSAGE value="bg-animate visa mastercard" />
     <MESSAGE value="CVC CVV / tailwind animate VISA / MASTERCARD" />
     <MESSAGE value="Form complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Form complete" />
+    <MESSAGE value="Form submit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Form submit" />
   </component>
 </project>

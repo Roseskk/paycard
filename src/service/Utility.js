@@ -90,13 +90,19 @@ export default  class Utility {
     }
     FormValidator({mutate}) {
         let statusVal = ''
-        console.log(mutate.firstValue)
+        if (mutate.firstValue && mutate.secondValue &&mutate.thirdValue &&mutate.fourthValue &&mutate.monthValue && mutate.yearValue && mutate.secretValue !== '') {
+            statusVal = 'done'
+        } else {
+            statusVal = 'reject'
+        }
+
         switch (statusVal){
             case 'done': {
-                return
+                console.log('8.8.8.8')
+                return mutate.formStatus = 'done'
             }
             case 'reject': {
-                return
+                return mutate.formStatus = 'reject'
             }
             default : {
                 break
