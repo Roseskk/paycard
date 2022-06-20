@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5640ca3-7a50-49b1-8b51-7b7f1d02cb61" name="Changes" comment="CVC CVV / tailwind animate VISA / MASTERCARD">
+    <list default="true" id="a5640ca3-7a50-49b1-8b51-7b7f1d02cb61" name="Changes" comment="Form complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/card/PayCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/PayCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/cardDigits/CardDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/cardDigits/CardDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/cardDigits/CardSecret.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/cardDigits/CardSecret.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slice/inputSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slice/inputSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slice/transitionSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slice/transitionSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/Utility.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Utility.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654946433730</updated>
       <workItem from="1654946435158" duration="58308000" />
-      <workItem from="1655537705404" duration="15597000" />
+      <workItem from="1655537705404" duration="19228000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1654947339549</created>
@@ -168,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655553114387</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Form complete">
+      <created>1655713648161</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1655713648161</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +199,7 @@
     <MESSAGE value="RegEx" />
     <MESSAGE value="bg-animate visa mastercard" />
     <MESSAGE value="CVC CVV / tailwind animate VISA / MASTERCARD" />
-    <option name="LAST_COMMIT_MESSAGE" value="CVC CVV / tailwind animate VISA / MASTERCARD" />
+    <MESSAGE value="Form complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Form complete" />
   </component>
 </project>

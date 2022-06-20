@@ -88,4 +88,19 @@ export default  class Utility {
     SecretValidator({mutate,newState}) {
        return  mutate.secretValue = newState.replace(/[^0-9]/g, '').slice(0,3)
     }
+    FormValidator({mutate}) {
+        let statusVal = ''
+        console.log(mutate.firstValue)
+        switch (statusVal){
+            case 'done': {
+                return
+            }
+            case 'reject': {
+                return
+            }
+            default : {
+                break
+            }
+        }
+    }
 }

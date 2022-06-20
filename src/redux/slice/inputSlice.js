@@ -12,7 +12,8 @@ export const inputSlice = createSlice({
         fourthValue:'',
         monthValue: '',
         yearValue: '',
-        secretValue: ''
+        secretValue: '',
+        formStatus: ''
     },
     reducers: {
         firstLetterHandler:(state=0,{payload}) => {
@@ -54,10 +55,14 @@ export const inputSlice = createSlice({
             const newState = payload.value
             const secretCheck = new Utility()
             secretCheck.SecretValidator({mutate: state, newState})
+        },
+        formSubmit:(state=0) => {
+          const formCheck = new Utility()
+          formCheck.FormValidator({mutate: state})
         }
     }
 })
 
-export const {firstLetterHandler,firstInput,secondInput,thirdInput,fourthInput,monthValue,yearValue,secretInput} = inputSlice.actions
+export const {firstLetterHandler,firstInput,secondInput,thirdInput,fourthInput,monthValue,yearValue,secretInput,formSubmit} = inputSlice.actions
 
 export default inputSlice.reducer
