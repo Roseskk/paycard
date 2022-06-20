@@ -98,7 +98,6 @@ export default  class Utility {
 
         switch (statusVal){
             case 'done': {
-                console.log('8.8.8.8')
                 return mutate.formStatus = 'done'
             }
             case 'reject': {

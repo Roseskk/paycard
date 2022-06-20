@@ -9,36 +9,26 @@ import {formSubmit} from "../../redux/slice/inputSlice";
 export default function PayCard() {
     const dispatch = useDispatch();
 
-    const isFormComplete = []
-
     const inputHandler = useSelector((state) => state.inputHolder.name);
     const colorSelector = useSelector((state) => state.colorHolder.color);
-    const formSelector = useSelector((state)=> state.inputHolder.formStatus);
-    const bgSelector = useSelector((state)=> state.colorHolder.background);
-
-    // firstValue:'',
-    //     secondValue:'',
-    //     thirdValue:'',
-    //     fourthValue:'',
-    //     monthValue: '',
-    //     yearValue: '',
-    //     secretValue: '',
+    const formSelector = useSelector((state) => state.inputHolder.formStatus);
+    const firstLetter = useSelector((state) => state.inputHolder.firstValue)
+    const bgSelector = useSelector((state) => state.colorHolder.background);
 
     const handleCard = () => {
-        // e.preventDefault()
-        console.log('123')
+        // send data
     }
 
     useEffect(()=>{
         setInterval(()=>{
-            dispatch(formSubmit())
-            console.log(formSelector)
-            if (formSelector === 'done') {
-                handleCard()
-                console.log('done')
+            if (firstLetter[0] === '4' || firstLetter[0] === '5') {
+                dispatch(formSubmit())
+                if (formSelector === 'done') {
+                    handleCard()
+                }
             }
         },1200)
-    },[])
+    },[formSelector,firstLetter])
 
     return(
         <div className={`${bgSelector === ' ' ? 'bg-black' : bgSelector} absolute w-card h-card  rounded overflow-hidden transition ease-in-out delay-500`}>

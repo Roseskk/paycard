@@ -14,7 +14,6 @@ export default function CardNumber() {
     const secondInputValue = useSelector((state) => state.inputHolder.secondValue)
     const thirdInputValue = useSelector((state) => state.inputHolder.thirdValue)
     const fourthInputValue = useSelector((state) => state.inputHolder.fourthValue)
-    const bgSelector = useSelector((state)=> state.colorHolder.background)
 
     const firstInputRef = useRef();
     const secondInputRef = useRef();
