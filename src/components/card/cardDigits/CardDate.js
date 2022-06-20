@@ -26,7 +26,7 @@ export default function CardDate() {
                 }
                 if(value.length === 0) {
                     dispatch(showMM())
-                } else {dispatch(animateMM)}
+                } else if (value.length > 0)  {dispatch(animateMM)}
                 break
             }
             case 'year': {
@@ -34,7 +34,7 @@ export default function CardDate() {
                 dispatch(yearValue({value}))
                 if(value.length === 0) {
                     dispatch(showYY())
-                } else { dispatch(animateYY) }
+                } else if (value.length > 0) { dispatch(animateYY) }
                 break
             }
             default: {

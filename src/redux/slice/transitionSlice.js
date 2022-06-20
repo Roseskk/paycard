@@ -5,7 +5,8 @@ export const placeHolderSlice = createSlice({
     initialState:{
         value: '',
         mm: '',
-        yy: ''
+        yy: '',
+        secret: ''
     },
     reducers: {
         animate: (state) => {
@@ -25,10 +26,16 @@ export const placeHolderSlice = createSlice({
         },
         showYY: (state) => {
             state.yy = 'translate-y-0 translate-x-0 opacity-100 scale-1'
+        },
+        animateSecret: (state) => {
+            state.secret = '-translate-y-3 -translate-x-3 opacity-0 scale-08'
+        },
+        showSecret: (state) => {
+            state.secret = 'translate-y-0 translate-x-0 opacity-100 scale-1'
         }
     }
 })
 
-export const {animate,animateMM,animateYY,show,showMM,showYY}= placeHolderSlice.actions
+export const {animate,animateMM,animateYY,show,showMM,showYY,animateSecret,showSecret}= placeHolderSlice.actions
 
 export default placeHolderSlice.reducer

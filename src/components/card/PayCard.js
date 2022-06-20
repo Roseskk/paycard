@@ -2,6 +2,7 @@ import {useSelector} from "react-redux";
 import CardNumber from "./cardDigits/CardNumber";
 import CardDate from "./cardDigits/CardDate";
 import CardSecret from "./cardDigits/CardSecret";
+import {useEffect} from "react";
 
 
 export default function PayCard() {
@@ -10,6 +11,11 @@ export default function PayCard() {
     const colorSelector = useSelector((state) => state.colorHolder.color);
     const bgSelector = useSelector((state)=> state.colorHolder.background)
 
+    useEffect(()=>{
+        setInterval(()=>{
+
+        },1200)
+    },[])
 
     return(
         <div className={`${bgSelector === ' ' ? 'bg-black' : bgSelector} absolute w-card h-card  rounded overflow-hidden transition ease-in-out delay-500`}>

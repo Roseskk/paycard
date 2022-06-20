@@ -85,4 +85,7 @@ export default  class Utility {
             }
         }
     }
+    SecretValidator({mutate,newState}) {
+       return  mutate.secretValue = newState.replace(/[^0-9]/g, '').slice(0,3)
+    }
 }

@@ -11,7 +11,8 @@ export const inputSlice = createSlice({
         thirdValue:'',
         fourthValue:'',
         monthValue: '',
-        yearValue: ''
+        yearValue: '',
+        secretValue: ''
     },
     reducers: {
         firstLetterHandler:(state=0,{payload}) => {
@@ -48,10 +49,15 @@ export const inputSlice = createSlice({
             const newState = payload.value
             const dateCheck = new Utility()
             dateCheck.DateValidator({mutate: state, newState,type:'year'})
+        },
+        secretInput: (state=0,{payload}) => {
+            const newState = payload.value
+            const secretCheck = new Utility()
+            secretCheck.SecretValidator({mutate: state, newState})
         }
     }
 })
 
-export const {firstLetterHandler,firstInput,secondInput,thirdInput,fourthInput,monthValue,yearValue} = inputSlice.actions
+export const {firstLetterHandler,firstInput,secondInput,thirdInput,fourthInput,monthValue,yearValue,secretInput} = inputSlice.actions
 
 export default inputSlice.reducer
